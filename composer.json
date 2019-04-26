@@ -1,0 +1,22 @@
+{
+    "name": "damians/metrics-platforms",
+    "description": "Provides instrument to manage date from metrics platforms",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Damiano Ilacqua",
+            "email": "damiano.ilacqua@edimotive.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "symfony/process": "^3.4",
+        "philcook/gtmetrix": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Damians\\MetricsPlatforms\\": "src/"
+        }
+    }
+}
