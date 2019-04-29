@@ -34,26 +34,6 @@ class PlatformData
     protected $test_url;
 
     /**
-     * @ORM\Column(type="integer")
-     */
-    protected $html_bytes;
-
-    /**
-     * @ORM\Column(type="integer")
-     */
-    protected $page_bytes;
-
-    /**
-     * @ORM\Column(type="float")
-     */
-    protected $dom_content_loaded_time;
-
-    /**
-     * @ORM\Column(type="float")
-     */
-    protected $onload_time;
-
-    /**
      * @ORM\Column(type="text")
      */
     protected $full_data_json;
@@ -62,7 +42,7 @@ class PlatformData
 
     public static function fromArray(array $value){
         $pd = new self();
-        $pd->data = $value;
+        $pd->setData($value);
         $pd->setDate(new \DateTime());
         $pd->setTestUrl($value['test_url']);
         $pd->setFullDataJson(json_encode($value));
@@ -79,6 +59,16 @@ class PlatformData
     public function getId()
     {
         return $this->id;
+    }
+
+    public function setData($data)
+    {
+        $this->data = $data;
+    }
+
+    public function getData()
+    {
+        return $this->data;
     }
 
     public function setDate($date)
